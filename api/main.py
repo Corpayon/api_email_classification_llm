@@ -1,6 +1,6 @@
 from fastapi import FastAPI, HTTPException, Request, Security, status
 from pydantic import BaseModel as PydanticBaseModel
-from classification import Classification
+from classification.classification import Classification
 from fastapi.security import APIKeyHeader
 import os
 
@@ -40,6 +40,11 @@ def private(api_key: str = Security(get_api_key)):
     """A private endpoint that requires a valid API key to be provided."""
     return f"Private Endpoint. API Key: {api_key}"
 
+@app.get('/')
+def test():
+    return {"message":"hello"}
+
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
