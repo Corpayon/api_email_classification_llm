@@ -1,0 +1,5 @@
+python -m pytest ./tests/
+
+--------
+
+uvicorn --app-dir=. api.main:app --reload : runs a Uvicorn server hosting the ASGI application app defined in api.main, with automatic reload on code changes, using the current directory as the app directory.
