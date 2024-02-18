@@ -11,5 +11,5 @@ COPY . /app
 # Stelle sicher, dass du eine requirements.txt-Datei mit allen benötigten Paketen hast
 RUN pip install --no-cache-dir -r requirements.in
 
-# Der Befehl, der ausgeführt wird, wenn der Container startet
+# Der Befehl, der ausgeführt wird, wenn der Container startet tes
 CMD ["python", "./api_interface.py"]
